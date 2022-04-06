@@ -5,7 +5,7 @@ class CreateArticles < ActiveRecord::Migration[7.0]
       t.text :body
       t.integer :visits_count
 
-      t.timestamps
+      t.timestamps null:false
     end
   end
 end
