@@ -234,6 +234,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  activerecord
   bootsnap
   bootstrap (~> 5.1.3)
   capybara

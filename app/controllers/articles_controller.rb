@@ -29,10 +29,29 @@ class ArticlesController < ApplicationController
         end
     end
 
+   
+
+    def edit
+        @article = Article.find(params[:id])
+    end
+
     def destroy        
         @article = Article.find(params[:id])
         @article.destroy
         redirect_to articles_path
+    end
+
+    #PUT /articles/:id
+    def update
+        @article = Article.find(params[:id])
+        #if @article.update(params[:article])
+        if @article.update(article_params)
+        #if @article.update(title: params[:article][:title], body: params[:article][:body])
+        #if @article.update_attributes(params[:title])
+            redirect_to @article
+        else
+            render :edit
+        end
     end
 
     private
